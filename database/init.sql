@@ -14,8 +14,9 @@ CREATE TABLE reviews (
   value_rating SMALLINT,
   cleanliness_rating SMALLINT,
   communication_rating SMALLINT,
-  overall_rating SMALLINT,
-  PRIMARY KEY (room_id, id)
+  overall_rating SMALLINT
 );
 
 \COPY reviews FROM 'seedData.csv' WITH (FORMAT CSV);
+
+CREATE INDEX ON reviews (room_id);
